@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="131" height="27" viewBox="0 0 131 27">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="131" height="27" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" clip-path="url(#clip-path)">
+    <g transform="translate(-242 -122)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="13.5" cy="13.5" r="13.5" transform="translate(242 122)" fill="#34407d"/>
+    </g>
+    <g transform="translate(-195 -122)">
+      <circle id="Ellipse_1-2" data-name="Ellipse 1" cx="13.5" cy="13.5" r="13.5" transform="translate(242 122)" fill="#34407d"/>
+    </g>
+    <g transform="translate(-148 -122)">
+      <circle id="Ellipse_1-3" data-name="Ellipse 1" cx="13.5" cy="13.5" r="13.5" transform="translate(242 122)" fill="#34407d"/>
+    </g>
+  </g>
+</svg>
