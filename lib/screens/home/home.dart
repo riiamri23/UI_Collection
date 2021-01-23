@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:nb_utils/nb_utils.dart';
 import 'package:uifreelance/model/job.dart';
+import 'package:uifreelance/screens/detail/detail.dart';
 import 'package:uifreelance/utils/app_colors.dart';
 import 'package:uifreelance/utils/app_constants.dart';
 import 'package:uifreelance/utils/app_widgets.dart';
@@ -25,19 +26,112 @@ class _HomeScreenState extends State<HomeScreen> {
         deadLine: "20 January",
         percentage: "assets/icons/sample_presentase.svg",
         colorbg: Color(0xFF30A7C1),
-        colorsecondary: Color(0xFF56B5CA));
+        colorsecondary: Color(0xFF56B5CA),
+        categories: ["Ui Interface", "UI Design", "UI/UX"],
+        currency: "USD",
+        description:
+            "In this project, I need to redesign website pixel.com become clean website. It is very important to choose a best image asset and color. The main goal is to make colorful website.",
+        isEnd: true,
+        postedBy: "Pixel.Inc",
+        price: 300,
+        applicants: [
+          Aplicator(
+            name: "Mary Carter",
+            percentage: 50,
+            attachment: [
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+            ],
+            img:
+                "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            deadLine: "20 January",
+          )
+        ],
+        selectedAplicator: Aplicator(
+          name: "Mary Carter",
+          percentage: 50,
+          attachment: [
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+          ],
+          img:
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+          deadLine: "20 January",
+        ));
     JobModel jobModel2 = JobModel(
-        jobName: "Mobile App Furniture",
+        jobName: "Rebranding Logo",
         deadLine: "15 January",
         percentage: "assets/icons/sample_presentase.svg",
         colorbg: Color(0xFF5848FD),
-        colorsecondary: Color(0xFF6B5CFF));
+        colorsecondary: Color(0xFF6B5CFF),
+        categories: ["Ui Interface", "UI Design", "UI/UX"],
+        currency: "USD",
+        description:
+            "I need someone to redesign and rebranding my restaurant logo. I need a simple logo that can bring people to come to my barbeque restaurant. I hope you can finish this project 1 month.",
+        isEnd: false,
+        postedBy: "BBQ Restaurant",
+        price: 400,
+        applicants: [
+          Aplicator(
+            name: "Mary Carter",
+            percentage: 50,
+            attachment: [
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+            ],
+            img:
+                "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            deadLine: "20 January",
+          )
+        ],
+        selectedAplicator: Aplicator(
+          name: "Mary Carter",
+          percentage: 50,
+          attachment: [
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+          ],
+          img:
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+          deadLine: "20 January",
+        ));
     JobModel jobModel3 = JobModel(
         jobName: "Redesign IKEA",
         deadLine: "25 January",
         percentage: "assets/icons/sample_presentase.svg",
         colorbg: Color(0xFF306489),
-        colorsecondary: Color(0xFF4B7DA0));
+        colorsecondary: Color(0xFF4B7DA0),
+        categories: ["Ui Interface", "UI Design", "UI/UX"],
+        currency: "USD",
+        description:
+            "In this project, I need to redesign website pixel.com become clean website. It is very important to choose a best image asset and color. The main goal is to make colorful website.",
+        isEnd: true,
+        postedBy: "Pixel.Inc",
+        price: 300,
+        applicants: [
+          Aplicator(
+            name: "Mary Carter",
+            percentage: 50,
+            attachment: [
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+            ],
+            img:
+                "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            deadLine: "20 January",
+          )
+        ],
+        selectedAplicator: Aplicator(
+          name: "Mary Carter",
+          percentage: 50,
+          attachment: [
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+            "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg"
+          ],
+          img:
+              "assets/images/lifestyle-business-people-using-laptop-computer-pink 1.jpg",
+          deadLine: "20 January",
+        ));
 
     listJob.add(jobModel1);
     listJob.add(jobModel2);
@@ -130,12 +224,12 @@ class TeamWidget extends StatelessWidget {
               children: [
                 TextWidget(
                   "Pixel Studio",
-                  fontSize: 18,
+                  fontSize: fontSizeMedium,
                   fontWeight: FontWeight.w600,
                 ),
                 TextWidget(
                   "you have 5 members",
-                  fontSize: 13,
+                  fontSize: fontSizeSmall,
                   fontColor: textSecondaryColor,
                   fontWeight: FontWeight.w400,
                 ),
@@ -178,8 +272,7 @@ class TeamWidget extends StatelessWidget {
                     child: CircleAvatar(
                       // backgroundColor: avatarMyTeamColor,
                       // child: Text('P'),
-                      backgroundImage:
-                          AssetImage(img_profile1),
+                      backgroundImage: AssetImage(img_profile1),
                     ),
                   ),
                 ),
@@ -206,7 +299,7 @@ class NotificationWidget extends StatelessWidget {
         children: [
           TextWidget(
             "Notification",
-            fontSize: 18,
+            fontSize: fontSizeMedium,
             fontWeight: FontWeight.w600,
           ),
           SizedBox(
@@ -235,7 +328,7 @@ class NotificationWidget extends StatelessWidget {
                     children: [
                       TextWidget(
                         "Ryan Malone",
-                        fontSize: 18,
+                        fontSize: fontSizeMedium,
                         fontWeight: FontWeight.w600,
                       ),
                       TextWidget(
@@ -297,78 +390,81 @@ class CardJobWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Container(
-        decoration: BoxDecoration(
-            // borderRadius: BorderRadius.all(
-            //   Radius.circular(15),
-            // ),
-            color: jobModel.colorbg),
-        width: 140,
-        height: 170,
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 105.0,
-              left: 90.0,
-              child: Transform.rotate(
-                angle: math.pi / 14,
-                child: Container(
-                  height: 80.0,
-                  width: 80.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                      color: jobModel.colorsecondary),
-                ),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 35,
-                    height: 35,
-                    child: SvgPicture.asset(jobModel.percentage),
-                  ),
-                  Flexible(
-                      child: TextWidget(
-                    jobModel.jobName,
-                    fontColor: textWhiteColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15,
-                  )),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+    return InkWell(
+      onTap: () {
+        // print('hello');
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return DetailScreen(
+            job: jobModel,
+          );
+        }));
+      },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Container(
+          decoration: BoxDecoration(
+              // borderRadius: BorderRadius.all(
+              //   Radius.circular(15),
+              // ),
+              color: jobModel.colorbg),
+          width: 140,
+          height: 170,
+          child: Stack(
+            children: [
+              Positioned(
+                bottom: 105.0,
+                left: 90.0,
+                child: Transform.rotate(
+                  angle: math.pi / 14,
+                  child: Container(
+                    height: 80.0,
+                    width: 80.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(
                           Radius.circular(15),
                         ),
                         color: jobModel.colorsecondary),
-                    child: TextWidget(
-                      "until ${jobModel.deadLine}",
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 35,
+                      height: 35,
+                      child: SvgPicture.asset(jobModel.percentage),
+                    ),
+                    Flexible(
+                        child: TextWidget(
+                      jobModel.jobName,
                       fontColor: textWhiteColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 10,
-                    ),
-                  )
-                  // SizedBox(
-                  //   width: 200.0,
-                  //   height: 20.0,
-                  //   child: new OutlineButton(
-                  //       borderSide: BorderSide(width: 4.0),
-                  //       child: Text('I am a button'),
-                  //       onPressed: (() {})),
-                  // ),
-                ],
+                      fontSize: 15,
+                    )),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          color: jobModel.colorsecondary),
+                      child: TextWidget(
+                        "until ${jobModel.deadLine}",
+                        fontColor: textWhiteColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 10,
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -439,12 +535,12 @@ class TopBarApp extends StatelessWidget {
               children: [
                 TextWidget(
                   'Mon, Nov 9 2020',
-                  fontSize: sizeFontDate,
+                  fontSize: fontSizeSuperSmall,
                   fontWeight: FontWeight.w300,
                 ),
                 TextWidget(
                   'Hi, Mary Carter',
-                  fontSize: 18,
+                  fontSize: fontSizeMedium,
                 )
               ],
             ),
